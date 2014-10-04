@@ -13,6 +13,7 @@ set(Boost_USE_MULTITHREADED ON)
 find_package(Boost 1.55 REQUIRED system thread)
 find_package(Jack REQUIRED)
 find_package(Qt4 REQUIRED)
+find_package(FFTW REQUIRED)
 
 qt4_wrap_cpp(QT_HEADERS_MOC ${QT_HEADERS})
 qt4_wrap_ui(QT_FORMS_HEADERS ${QT_FORMS})
@@ -31,4 +32,5 @@ add_executable(specter
 target_link_libraries(specter
   ${JACK_LIBRARIES}
   ${QT_LIBRARIES}
-  ${Boost_LIBRARIES})
+  ${Boost_LIBRARIES}
+  ${FFTW_LIBRARIES})
